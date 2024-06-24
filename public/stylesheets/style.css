@@ -1,78 +1,71 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
-.container {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.hero {
+  background: url('/images/cinema.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+  padding: 0 50px;
+  text-align: right;
 }
 
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+.hero h1 {
+  font-size: 4em;
+  margin: 0;
 }
 
-h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-img {
-  float: left;
-  margin-right: 20px;
-  border-radius: 8px;
-  width: 200px;
-}
-
-.movie-details {
-  overflow: hidden;
-}
-
-.movie-details h2 {
-  margin-top: 0;
-}
-
-.movie-details ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.movie-details ul li {
-  margin-bottom: 5px;
-}
-
-.movie-details p {
-  margin-top: 20px;
-}
-
-.movie-details .showtimes {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-a.button {
+.hero a.button {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.5em;
   color: #333;
-  background-color: #ddd;
+  background-color: white;
   text-decoration: none;
   border-radius: 5px;
 }
 
-a.button:hover {
-  background-color: #ccc;
+.hero a.button:hover {
+  background-color: #ddd;
 }
+
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie-item {
+  text-align: center;
+  margin: 20px;
+}
+
+.movie-item img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.movie-item h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.movie-item a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.movie-item a:hover {
+  text-decoration: underline;
+}
+
