@@ -3,7 +3,7 @@
 require('dotenv/config');
 
 // ℹ️ Connects to the database
-require('./db');
+require('./db/index');
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
@@ -12,6 +12,7 @@ const express = require('express');
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
+const path = require('path');
 
 const app = express();
 
@@ -22,11 +23,18 @@ require('./config')(app);
 const projectName = 'lab-express-cinema';
 const capitalized = string => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`;
+app.locals.title = `${capitalized(projectName)} - Generated with Ironlauncher`;
 
-// 👇 Start handling routes here
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Routes
 const index = require('./routes/index');
 app.use('/', index);
+
+// Movies routes
+const moviesRouter = require('./routes/movies');
+app.use('/', moviesRouter);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
